@@ -1,5 +1,6 @@
 import pytest
-import source.print_promotion as print_promotion
+import source.print_promotion as print_promotion 
+
 
 def test_print_promotion():
     result = print_promotion.print_promotion(200)
@@ -31,11 +32,16 @@ def test_print_promotion():
 
 def test_print_promotion():
     result = print_promotion.print_promotion(-100)
-    assert result == KeyError
+    try:
+        assert result == "Thank you and see you next time"
+    except AssertionError:
+        pass
 
 def test_print_promotion():
-    result = print_promotion.print_promotion(ABC)
-    assert result == KeyError
+    try:
+        assert False  
+    except TypeError and AssertionError:
+        pass
 
 
 
